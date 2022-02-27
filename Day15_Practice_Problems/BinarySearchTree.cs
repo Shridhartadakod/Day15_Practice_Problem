@@ -52,6 +52,23 @@ namespace Day15_Practice_Problems
                 right.Display();
         }
 
+        public bool Search(T item)
+        {
+
+            if (this.data.CompareTo(item) == 0)
+
+                return true;
+
+            if (this.data.CompareTo(item) > 0)
+            {
+                if (left == null)
+                    return false;
+                return left.Search(item);
+            }
+            else if (right == null)
+                return false;
+            return right.Search(item);
+        }
     }
 }
 
